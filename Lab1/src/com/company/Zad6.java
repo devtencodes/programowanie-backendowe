@@ -52,9 +52,9 @@ public class Zad6 {
     public static void printFromFile(List<String> strings) {
 
         for (int i = 0; i < strings.size(); i++) {
-            int counter = strings.size();
+            int counter = i + 1;
             System.out.println("Linia " + counter + " ---- " + strings.get(i));
-            counter++;
+            counter = counter + 1;
         }
     }
 
