@@ -6,7 +6,6 @@ import java.util.*;
 public class Zad6 {
 
     public static void main(String[] args) {
-
         // Reading from string
         String str = "tekst1\n tekst2\r tekst3\n tekst4\r\n";
         readFromString(str);
@@ -15,17 +14,16 @@ public class Zad6 {
         // Reading from file
         List<String> content = readTextFromFile();
         printFromFile(content);
-
     }
 
 
     public static void readFromString(String str) {
         String[] strings = str.split("\\r?\\n|\\r");
 
-        int counter = 1;
-        for (int i = 0; i < strings.length; i++) {
-            System.out.println("Linia " + counter + " ---- " + strings[i]);
-            counter++;
+        int itt = 1;
+        for (String string: strings) {
+            System.out.println("Linia " + itt + " ----- " + string);
+            itt++;
         }
     }
 
@@ -50,12 +48,10 @@ public class Zad6 {
     }
 
     public static void printFromFile(List<String> strings) {
-
-        for (int i = 0; i < strings.size(); i++) {
-            int counter = i + 1;
-            System.out.println("Linia " + counter + " ---- " + strings.get(i));
-            counter = counter + 1;
+        int itt = 1;
+        for (String string: strings) {
+            System.out.println("Linia " + itt + " ----- " + string);
+            itt++;
         }
     }
-
 }
