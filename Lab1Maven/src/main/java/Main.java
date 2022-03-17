@@ -1,6 +1,3 @@
-import java.text.SimpleDateFormat;
-import java.util.*;
-
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -8,16 +5,23 @@ public class Main {
 
     public static void main(String[] args) throws JsonProcessingException {
 
-
-
-        // Converting object to json
         ObjectMapper objectMapper = new ObjectMapper();
 
-        User userObject = new User("John", 21);
+        // Converting object to json
+
+        User userObject = new User("Bobby", 24);
         String userJson = objectMapper.writeValueAsString(userObject);
 
-        System.out.println(userJson); // {"name":"John","age":21}
+        System.out.println(userJson); // {"name":"Bobby","age":24}
         // ----------------------
+
+
+        // Converting json to object
+        String userJson2 = "{\"name\":\"Franklin\",\"age\":23}";
+        UserNoArguments userObject2 = objectMapper.readValue(userJson2, UserNoArguments.class);
+
+        System.out.println(userObject2.getName()); // Franklin
+        System.out.println(userObject2.getAge());  // 23
     }
 
 
