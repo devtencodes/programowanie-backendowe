@@ -16,5 +16,5 @@ Załozenia:
 12. Autoryzacja na podstawie ról użytkowników
 13. Autentykacja tokenem
 14. Stworzenie docker-composera dla aplikacji i db
-15. Mikroserwisy?
-16. Dodanie wersji produkcyjnej
+15. Dodanie wersji produkcyjnej
+16. Stworzenie dokumentacji do projektu
