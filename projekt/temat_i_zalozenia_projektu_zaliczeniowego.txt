@@ -3,9 +3,9 @@ Temat: Aplikacja sklepu internetowego w technologii Typescript z wykorzystaniem 
 Załozenia:
 1. Wstępne ustawienie projektu i zainstalowanie początkowych zależności
 2. Postawienie bazy danych POSTGRES w Dockerze
-3. Nawiązanie połączenia z bazą danych
-4. Utworzenie modelu (product)
-5. Routing i controller dla produktu
+3. Utworzenie wstepnego modelu (product)
+4. Wstepny Routing i controller dla produktu
+5. Nawiązanie połączenia z bazą danych
 6. Utworzenie modelu użytkownika (user)
 7. Dodanie nakładki swagger?
 8. Routing i controller dla użytkownika
