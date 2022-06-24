@@ -1,13 +1,54 @@
-import { RequestHandler } from "express";
-import { Product } from "../models/product";
+import { Request, Response, NextFunction } from "express";
+import Product from "../models/product";
 
-const PRODUCTS: Product[] = [
-    {
-        id: "1",
-        text: "Temp product",
-    },
-];
+export const postAddProduct = (
+    req: Request,
+    res: Response,
+    next: NextFunction
+) => {
+    const { title } = req.body;
+    const { price } = req.body;
+    const { description } = req.body;
+    const { imageUrl } = req.body;
 
-export const getProducts: RequestHandler = (req, res, next) => {
-    res.json({ product: PRODUCTS });
+    const product = new Product({
+        title,
+        price,
+        description,
+        imageUrl,
+    });
+
+    return product
+        .save()
+        .then((product) => res.status(201).json({ product }))
+        .catch((error) => res.status(500).json({ error }));
+};
+
+export const getProducts = (
+    req: Request,
+    res: Response,
+    next: NextFunction
+) => {
+    return Product.find()
+        .then((product) => res.status(201).json({ product }))
+        .catch((error) => res.status(500).json({ error }));
+};
+export const getProduct = (req: Request, res: Response, next: NextFunction) => {
+    const productId = req.params.productId;
+    return Product.findById(req.params.productId)
+        .then((product) => res.status(201).json({ product }))
+        .catch((error) => res.status(500).json({ error }));
+};
+
+export const postDeleteProduct = (
+    req: Request,
+    res: Response,
+    next: NextFunction
+) => {
+    const productId = req.params.productId;
+    return Product.findByIdAndDelete(productId).then((product) =>
+        product
+            ? res.status(201).json({ message: "product deleted" })
+            : res.status(404).json({ message: "product not found" })
+    );
 };

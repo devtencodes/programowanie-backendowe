@@ -1,10 +1,6 @@
-// export class Product {
-//     constructor(public id: string, public text: string) {}
-// }
-
 import mongoose from "mongoose";
 
-export interface IProduct extends mongoose.Document {
+export interface IUser extends mongoose.Document {
     title: string;
     price: number;
     description: string;
@@ -12,7 +8,7 @@ export interface IProduct extends mongoose.Document {
     userId: mongoose.Schema.Types.ObjectId;
 }
 
-const productSchema = new mongoose.Schema({
+const userSchema = new mongoose.Schema<IUser>({
     title: {
         type: String,
         required: true,
@@ -36,5 +32,4 @@ const productSchema = new mongoose.Schema({
     },
 });
 
-const Product = mongoose.model<IProduct>("Product", productSchema);
-export default Product;
+export default mongoose.model("User", userSchema);

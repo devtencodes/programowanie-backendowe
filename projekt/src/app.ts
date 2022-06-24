@@ -1,6 +1,7 @@
 import express, { Request, Response, NextFunction } from "express";
 import { connect } from "mongoose";
 import productRoutes from "./routes/product";
+import orderRoutes from "./routes/order";
 import { json } from "body-parser";
 import dotenv from "dotenv";
 
@@ -11,6 +12,7 @@ const app = express();
 
 app.use(json());
 app.use("/products", productRoutes);
+app.use("/products", orderRoutes);
 
 const dbConnection = connect("mongodb://localhost:27017/mongo_database").then(
     () => {

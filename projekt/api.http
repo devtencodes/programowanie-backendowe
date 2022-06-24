@@ -1,1 +1,11 @@
-GET http://localhost:3000/products
+# GET http://localhost:3000/products
+
+POST http://localhost:3000/products
+Content-Type: application/json
+
+{
+  title: "Tetsowy product",
+  price: 23.33,
+  description: "test product description",
+  imageUrl: "testimage.jpg"
+  }
