@@ -14,7 +14,7 @@ dotenv_1.default.config();
 const app = (0, express_1.default)();
 app.use((0, body_parser_1.json)());
 app.use("/products", product_1.default);
-app.use("/products", order_1.default);
+app.use("/orders", order_1.default);
 const dbConnection = (0, mongoose_1.connect)("mongodb://localhost:27017/mongo_database").then(() => {
     console.log("Succesfully connected");
     app.listen(3000);

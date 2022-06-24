@@ -7,8 +7,8 @@ export const getOrders = (req: Request, res: Response, next: NextFunction) => {
         .catch((error) => res.status(500).json({ error }));
 };
 export const getOrder = (req: Request, res: Response, next: NextFunction) => {
-    const orderId = req.params.productId;
-    return Order.findById(req.params.productId)
+    const orderId = req.params.orderId;
+    return Order.findById(orderId)
         .then((order) => res.status(201).json({ order }))
         .catch((error) => res.status(500).json({ error }));
 };

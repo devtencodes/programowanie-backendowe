@@ -12,8 +12,8 @@ const getOrders = (req, res, next) => {
 };
 exports.getOrders = getOrders;
 const getOrder = (req, res, next) => {
-    const orderId = req.params.productId;
-    return product_1.default.findById(req.params.productId)
+    const orderId = req.params.orderId;
+    return product_1.default.findById(orderId)
         .then((order) => res.status(201).json({ order }))
         .catch((error) => res.status(500).json({ error }));
 };

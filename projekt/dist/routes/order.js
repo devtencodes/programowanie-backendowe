@@ -26,6 +26,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
 const orderController = __importStar(require("../controllers/order"));
 const router = (0, express_1.Router)();
-router.post("/", orderController.getOrder);
+router.post("/:orderId", orderController.getOrder);
 router.post("/", orderController.getOrders);
 exports.default = router;
