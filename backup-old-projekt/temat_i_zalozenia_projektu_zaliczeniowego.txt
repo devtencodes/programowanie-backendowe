@@ -1,0 +1,20 @@
+Temat: Aplikacja sklepu internetowego w technologii Typescript z wykorzystaniem NodeJS.
+
+Załozenia:
+1. Wstępne ustawienie projektu i zainstalowanie początkowych zależności
+2. Postawienie bazy danych POSTGRES w Dockerze
+3. Utworzenie wstepnego modelu (product)
+4. Wstepny Routing i controller dla produktu
+5. Nawiązanie połączenia z bazą danych
+6. Utworzenie modelu użytkownika (user)
+7. Dodanie nakładki swagger?
+8. Routing i controller dla użytkownika
+9. Utworzenie modelu koszyka (cart)
+10. Routing i controller dla koszyka
+11. Utworzenie modelu zamówienia (order)
+12. Routing i controller dla zamowienia
+12. Autoryzacja na podstawie ról użytkowników
+13. Autentykacja tokenem
+14. Stworzenie docker-composera dla aplikacji i db
+15. Dodanie wersji produkcyjnej
+16. Stworzenie dokumentacji do projektu
