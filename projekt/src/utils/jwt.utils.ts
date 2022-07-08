@@ -15,11 +15,12 @@ export function verifyJwt(token: string) {
     try {
         const decoded = jwt.verify(token, publicKey);
         return {
-            valid: false,
+            valid: true,
             expired: false,
-            decoded: null,
+            decoded,
         };
     } catch (e: any) {
+        console.error(e);
         return {
             valid: false,
             expired: e.message === "jwt expired",
