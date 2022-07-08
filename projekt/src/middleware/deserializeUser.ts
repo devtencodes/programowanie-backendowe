@@ -5,16 +5,16 @@ import { request } from "http";
 
 const deserializeUser = (req: Request, res: Response, next: NextFunction) => {
     const accessToken = get(req, "headers.authorization", "").replace(
-        "/^Bearers/",
+        /^Bearer\s/,
         ""
     );
 
     if (!accessToken) {
+        console.log("test");
         return next();
     }
 
     const { decoded, expired } = verifyJwt(accessToken);
-    console.log("decoded", decoded);
 
     if (decoded) {
         res.locals.user = decoded;
