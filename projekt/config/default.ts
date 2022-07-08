@@ -2,6 +2,8 @@ export default {
     port: 1337,
     dbUri: "mongodb://localhost:27017/mongo_database",
     saltWorkFactor: 10,
+    accesstokenTtl: "15m",
+    refreshTokenTtl: "1y",
     publicKey: `-----BEGIN PUBLIC KEY-----
 MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCVislhUI3xRafPkZ90p44k8LPA
 LTsVE2mzcZKRf2GXhdHmCq8nVMFO7tIGRKhz6WsnzBWIfJV7jZVIz+Atk7ANbvPk
