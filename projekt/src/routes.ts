@@ -41,5 +41,11 @@ function routes(app: Express) {
 
     app.get("/api/sessions", requireUser, getUserSessionsHandler);
     app.delete("/api/sessions", requireUser, deleteSessionHandler);
+
+    app.post(
+        "/api/products",
+        [requireUser, validateResource(createProductSchema)],
+        createProductHandler
+    );
 }
 export default routes;
