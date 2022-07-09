@@ -1,4 +1,10 @@
 import { Express, Request, Response } from "express";
+import {
+    createProductHandler,
+    getProductHandler,
+    updateProductHandler,
+    deleteProductHandler,
+} from "./controller/product.controller";
 import { createUserHandler } from "./controller/user.controller";
 import {
     createUserSessionHandler,
@@ -9,6 +15,12 @@ import validateResource from "./middleware/validateResource";
 import requireUser from "./middleware/requireUser";
 import { createUserSchema } from "./schema/user.schema";
 import { createSessionSchema } from "./schema/session.schema";
+import {
+    createProductSchema,
+    deleteProductSchema,
+    getProductSchema,
+    updateProductSchema,
+} from "./schema/product.schema";
 
 function routes(app: Express) {
     app.get("/healthcheck", (req: Request, res: Response) =>
