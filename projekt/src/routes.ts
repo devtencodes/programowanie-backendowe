@@ -5,12 +5,10 @@ import {
     deleteSessionHandler,
     getUserSessionsHandler,
 } from "./controller/session.controller";
-import { createProductHandler } from "./controller/product.controller";
 import validateResource from "./middleware/validateResource";
 import requireUser from "./middleware/requireUser";
 import { createUserSchema } from "./schema/user.schema";
 import { createSessionSchema } from "./schema/session.schema";
-import { createProductSchema } from "./schema/product.schema";
 
 function routes(app: Express) {
     app.get("/healthcheck", (req: Request, res: Response) =>
@@ -31,11 +29,5 @@ function routes(app: Express) {
 
     app.get("/api/sessions", requireUser, getUserSessionsHandler);
     app.delete("/api/sessions", requireUser, deleteSessionHandler);
-
-    app.post(
-        "/api/products",
-        [requireUser, validateResource(createProductSchema)],
-        createProductHandler
-    );
 }
 export default routes;
