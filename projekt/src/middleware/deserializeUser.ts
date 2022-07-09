@@ -10,7 +10,6 @@ const deserializeUser = (req: Request, res: Response, next: NextFunction) => {
     );
 
     if (!accessToken) {
-        console.log("test");
         return next();
     }
 
