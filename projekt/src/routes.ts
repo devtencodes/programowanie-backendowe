@@ -47,5 +47,23 @@ function routes(app: Express) {
         [requireUser, validateResource(createProductSchema)],
         createProductHandler
     );
+
+    app.get(
+        "/api/products",
+        validateResource(getProductSchema),
+        getProductHandler
+    );
+
+    app.put(
+        "/api/products",
+        [requireUser, validateResource(updateProductSchema)],
+        updateProductHandler
+    );
+
+    app.delete(
+        "/api/products",
+        [requireUser, validateResource(deleteProductSchema)],
+        deleteProductHandler
+    );
 }
 export default routes;
