@@ -1,3 +1,5 @@
+#TO NIE JEST AKTUALNA WERSJA
+
 Temat: Aplikacja sklepu internetowego w technologii Typescript z wykorzystaniem NodeJS.
 
 Załozenia:
